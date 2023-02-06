@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="FinTechDesignExample.MainPagePortrait"
+			 xmlns:local="clr-namespace:FinTechDesignExample"
+			 x:DataType="local:Strings">
+	<ContentPage.Behaviors>
+		<toolkit:StatusBarBehavior StatusBarColor="#F5F5F5" StatusBarStyle="DarkContent" />
+	</ContentPage.Behaviors>
+	
+	<Grid Padding="20" BackgroundColor="#F5F5F5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height=".5*"  />
+			<RowDefinition Height="1*" />
+			<RowDefinition Height=".45*" />
+			<RowDefinition Height="2*"/>
+		</Grid.RowDefinitions>
+		
+		<Frame Grid.Row="0" Padding="0"
+			BackgroundColor="#F5F5F5" BorderColor="#F5F5F5">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="100"/>
+				</Grid.ColumnDefinitions>
+				
+				<Label Grid.Column="0"
+					   Text="{Binding welcomeText}"
+					   VerticalTextAlignment="Center" FontSize="Medium" FontFamily="Montserrat-Bold"/>
+				<Image Grid.Column="1" 
+					   Source="icons8_circled_user_male_skin_type_6_480px.png"
+					   HorizontalOptions="End" HeightRequest="50" />
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="1" Padding="0"
+			BackgroundColor="#F5F5F5" BorderColor="#F5F5F5" CornerRadius="15">
+			<Grid>
+				<Image Source="blue_and_purple_business_card_background.jpg" Aspect="Fill"/>
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="*"/>
+						<RowDefinition Height="65"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					
+					<Label Grid.Row="0" Grid.Column="0"
+						Text="Debit"
+						FontSize="Small" FontFamily="Montserrat-Regular" HorizontalOptions="Start" VerticalOptions="Start" Padding="20,15,0,0" TextColor="White">
+						<Label.Shadow>
+							<Shadow Brush="Black"/>
+						</Label.Shadow>
+					</Label>
+					<ImageButton Grid.Row="0" Grid.Column="1"
+						Source="icons8_dots_loading_144px.png"
+						HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start" Margin="0,15,20,0">
+						<ImageButton.Shadow>
+							<Shadow Brush="Black" />
+						</ImageButton.Shadow>
+					</ImageButton>
+					<ImageButton Grid.Row="1" Grid.Column="0"
+						Source="icons8_query_inner_join_left_512px_1.png"
+						HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" VerticalOptions="End" Margin="20,0,0,15">
+						<ImageButton.Shadow>
+							<Shadow Brush="Black" Opacity=".5" />
+						</ImageButton.Shadow>
+					</ImageButton>
+					<Label Grid.Row="1" Grid.Column="1"
+						Text="*8421 "
+						FontSize="Medium" FontFamily="Montserrat-Regular" HorizontalOptions="End" VerticalOptions="End" Padding="0,0,15,15" TextColor="White">
+						<Label.Shadow>
+							<Shadow Brush="Black"/>
+						</Label.Shadow>
+					</Label>
+					<Frame Grid.Row="2" Grid.ColumnSpan="2" 
+						   BackgroundColor="#E8E5E2" BorderColor="#E8E5E2" CornerRadius="0" Padding="0">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+
+							<Label Grid.Row="0" Grid.Column="0"
+									Text="{Binding balanceText}"
+									FontSize="Micro" FontFamily="KeepCalm-Medium" HorizontalOptions="Start" VerticalOptions="End" Padding="20,0,0,0" TextColor="Gray"/>
+							<Label Grid.Row="1" Grid.Column="0"
+									Text="{Binding cardTotalText}"
+									FontSize="Small"  FontFamily="KeepCalm-Medium" HorizontalOptions="Start" VerticalOptions="Start" Padding="20,0,0,0" TextColor="Black"/>
+							<ImageButton Grid.RowSpan="2" Grid.Column="1"
+										Source="icons8_adjust_480px.png"
+										HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,20,15">
+							</ImageButton>
+						</Grid>
+					</Frame>
+				</Grid>
+			</Grid>
+		</Frame>
+		<Frame Grid.Row="2"
+				BackgroundColor="#F5F5F5" BorderColor="#F5F5F5" CornerRadius="0" Padding="0,20,0,10">
+			<Frame  CornerRadius="15" Padding="0" BackgroundColor="#E8E5E2" BorderColor="#E8E5E2">
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+					<HorizontalStackLayout Grid.Column="0">
+						<Label Grid.Column="1"
+						   Text="VISA"
+						   VerticalOptions="Center" Margin="20,0,0,0" FontSize="Medium" FontFamily="airstrike"/>
+						<Label Grid.Column="1"
+						   Text="*1612"
+						   VerticalOptions="Center" Margin="10,0,0,0" FontSize="Small"  FontFamily="Montserrat-Regular"/>
+					</HorizontalStackLayout>
+					<Label Grid.Column="1"
+						   Text="{Binding visaTotalText}"
+						   HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,20,0" FontSize="Small" FontFamily="KeepCalm-Medium"/>
+				</Grid>
+			</Frame>
+		</Frame>
+		<Frame Grid.Row="3"
+				BackgroundColor="#F5F5F5" BorderColor="#F5F5F5" CornerRadius="0" Padding="0,15,0,0">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="30"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+					<ColumnDefinition Width="*"/>
+				</Grid.ColumnDefinitions>
+				
+				<Label Grid.Row="0" Grid.Column="0"
+					   Text="{Binding budgetsText}"
+						HorizontalOptions="Start" VerticalOptions="End" Margin="0,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" FontAttributes="Bold"/>
+				<Label Grid.Row="0" Grid.Column="1"
+					   Text="{Binding manageText}"
+						HorizontalOptions="End" VerticalOptions="End" Margin="0,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" FontAttributes="None" TextColor="Gray"/>
+				<Frame Grid.Row="1" Grid.Column="0"
+					   CornerRadius="15" Margin="0,20,10,10" BackgroundColor="#E8E5E2" BorderColor="#E8E5E2" Padding="0">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height=".5*"/>
+							<RowDefinition Height=".5*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Image Grid.Row="0" Grid.Column="0"
+							   Source="icons8_chart_480px.png"
+							   HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,15,0,0" Opacity=".5"/>
+						<Label Grid.Row="1" Grid.Column="0"
+							   Text="{Binding travelText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Bold" VerticalOptions="End"/>
+						<Label Grid.Row="1" Grid.Column="1"
+							   Text="83%"
+							   Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Bold" HorizontalOptions="End" VerticalOptions="End"/>
+						<Label Grid.Row="2" Grid.Column="0"
+							   Text="{Binding leftText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" Opacity=".45"/>
+					</Grid>
+				</Frame>
+				<Frame Grid.Row="1" Grid.Column="1"
+					   CornerRadius="15" Margin="10,20,0,10" BackgroundColor="#E8E5E2" BorderColor="#E8E5E2" Padding="0">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height=".5*"/>
+							<RowDefinition Height=".5*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Image Grid.Row="0" Grid.Column="0"
+							   Source="icons8_chart_480px.png"
+							   HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,15,0,0" Opacity=".5"/>
+						<Label Grid.Row="1" Grid.Column="0"
+							   Text="{Binding groceriesText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Bold" VerticalOptions="End"/>
+						<Label Grid.Row="1" Grid.Column="1"
+							   Text="69%"
+							   Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Bold" HorizontalOptions="End" VerticalOptions="End"/>
+						<Label Grid.Row="2" Grid.Column="0"
+							   Text="{Binding leftText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" Opacity=".45"/>
+					</Grid>
+				</Frame>
+				<Frame Grid.Row="2" Grid.Column="0"
+					   CornerRadius="15" Margin="0,10,10,20" BackgroundColor="#E8E5E2" BorderColor="#E8E5E2" Padding="0">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height=".5*"/>
+							<RowDefinition Height=".5*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Image Grid.Row="0" Grid.Column="0"
+							   Source="icons8_chart_480px.png"
+							   HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,15,0,0" Opacity=".5"/>
+						<Label Grid.Row="1" Grid.Column="0"
+							   Text="{Binding travelText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Bold" VerticalOptions="End"/>
+						<Label Grid.Row="1" Grid.Column="1"
+							   Text="83%"
+							   Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Bold" HorizontalOptions="End" VerticalOptions="End"/>
+						<Label Grid.Row="2" Grid.Column="0"
+							   Text="{Binding leftText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" Opacity=".45"/>
+					</Grid>
+				</Frame>
+				<Frame Grid.Row="2" Grid.Column="1"
+					   CornerRadius="15" Margin="10,10,0,20" BackgroundColor="#E8E5E2" BorderColor="#E8E5E2" Padding="0">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height=".5*"/>
+							<RowDefinition Height=".5*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Image Grid.Row="0" Grid.Column="0"
+							   Source="icons8_chart_480px.png"
+							   HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,15,0,0" Opacity=".5"/>
+						<Label Grid.Row="1" Grid.Column="0"
+							   Text="{Binding groceriesText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Bold" VerticalOptions="End"/>
+						<Label Grid.Row="1" Grid.Column="1"
+							   Text="69%"
+							   Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Bold" HorizontalOptions="End" VerticalOptions="End"/>
+						<Label Grid.Row="2" Grid.Column="0"
+							   Text="{Binding leftText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" Opacity=".45"/>
+					</Grid>
+				</Frame>
+			</Grid>
+		</Frame>
+
+	</Grid>
+
+</ContentPage>
