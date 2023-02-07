@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinTechDesignExample.MainPage_Landscape"
+			 xmlns:local="clr-namespace:FinTechDesignExample.Pages.MainPage"
+			 xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+
+	<ContentView.BindingContext>
+		<local:MainPageViewModel />
+	</ContentView.BindingContext>
+	
+	<Grid Padding="10" BackgroundColor="{x:StaticResource backColor}">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<Frame Grid.Column="0" Padding="0" BackgroundColor="{x:StaticResource backColor}" BorderColor="{x:StaticResource backColor}">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height=".2*"/>
+					<RowDefinition Height=".6*"/>
+					<RowDefinition Height=".2*"/>
+				</Grid.RowDefinitions>
+
+				<Frame x:Name="frame1" Loaded="frame_Loaded" Grid.Row="0" Padding="0" BackgroundColor="{x:StaticResource backColor}" BorderColor="{x:StaticResource backColor}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="100"/>
+						</Grid.ColumnDefinitions>
+
+						<Label Grid.Column="0"
+								Text="{Binding welcomeText}"
+								VerticalTextAlignment="Center" FontSize="Medium" FontFamily="Montserrat-Bold"/>
+						<Image Grid.Column="1" 
+								 Source="icons8_circled_user_male_skin_type_6_480px.png"
+								 HorizontalOptions="End" HeightRequest="50" />
+					</Grid>
+				</Frame>
+				
+				<Frame x:Name="frame2" Grid.Row="1" Padding="0" Margin="0,0,0,15" CornerRadius="15" BackgroundColor="{x:StaticResource backColor}" BorderColor="{x:StaticResource backColor}">
+					<Grid>
+						<Image Source="blue_and_purple_business_card_background.jpg" Aspect="Fill"/>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="*"/>
+								<RowDefinition Height="65"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="*"/>
+							</Grid.ColumnDefinitions>
+
+							<Label Grid.Row="0" Grid.Column="0"
+						Text="Debit"
+						FontSize="Small" FontFamily="Montserrat-Regular" HorizontalOptions="Start" VerticalOptions="Start" Padding="20,15,0,0" TextColor="White">
+								<Label.Shadow>
+									<Shadow Brush="Black"/>
+								</Label.Shadow>
+							</Label>
+							<ImageButton Grid.Row="0" Grid.Column="1"
+						Source="icons8_dots_loading_144px.png"
+						HeightRequest="20" WidthRequest="20" HorizontalOptions="End" VerticalOptions="Start" Margin="0,15,20,0">
+								<ImageButton.Shadow>
+									<Shadow Brush="Black" />
+								</ImageButton.Shadow>
+							</ImageButton>
+							<ImageButton Grid.Row="1" Grid.Column="0"
+						Source="icons8_query_inner_join_left_512px_1.png"
+						HeightRequest="35" WidthRequest="35" HorizontalOptions="Start" VerticalOptions="End" Margin="20,0,0,15">
+								<ImageButton.Shadow>
+									<Shadow Brush="Black" Opacity=".5" />
+								</ImageButton.Shadow>
+							</ImageButton>
+							<Label Grid.Row="1" Grid.Column="1"
+						Text="*8421 "
+						FontSize="Medium" FontFamily="Montserrat-Regular" HorizontalOptions="End" VerticalOptions="End" Padding="0,0,15,15" TextColor="White">
+								<Label.Shadow>
+									<Shadow Brush="Black"/>
+								</Label.Shadow>
+							</Label>
+							<Frame Grid.Row="2" Grid.ColumnSpan="2" 
+						   BackgroundColor="{x:StaticResource cardColor}" BorderColor="{x:StaticResource cardColor}" CornerRadius="0" Padding="0">
+								<Grid>
+									<Grid.RowDefinitions>
+										<RowDefinition Height="*"/>
+										<RowDefinition Height="*"/>
+									</Grid.RowDefinitions>
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*"/>
+										<ColumnDefinition Width="*"/>
+									</Grid.ColumnDefinitions>
+
+									<Label Grid.Row="0" Grid.Column="0"
+									Text="{Binding balanceText}"
+									FontSize="Micro" FontFamily="KeepCalm-Medium" HorizontalOptions="Start" VerticalOptions="End" Padding="20,0,0,0" TextColor="Gray"/>
+									<Label Grid.Row="1" Grid.Column="0"
+									Text="{Binding cardTotalText}"
+									FontSize="Small"  FontFamily="KeepCalm-Medium" HorizontalOptions="Start" VerticalOptions="Start" Padding="20,0,0,0" TextColor="Black"/>
+									<ImageButton Grid.RowSpan="2" Grid.Column="1"
+										Source="icons8_adjust_480px.png"
+										HeightRequest="30" WidthRequest="30" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,20,15">
+									</ImageButton>
+								</Grid>
+							</Frame>
+						</Grid>
+					</Grid>
+				</Frame>
+				<Button Grid.Row="1" Opacity="0" Clicked="frame2_Clicked"/>
+				<Frame x:Name="frame3" Grid.Row="2" Padding="0" Margin="0,0,0,10" CornerRadius="15" BackgroundColor="{x:StaticResource cardColor}" BorderColor="{x:StaticResource cardColor}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<HorizontalStackLayout Grid.Column="0">
+							<Label Grid.Column="1"
+						   Text="VISA"
+						   VerticalOptions="Center" Margin="20,0,0,0" FontSize="Medium" FontFamily="airstrike"/>
+							<Label Grid.Column="1"
+						   Text="*1612"
+						   VerticalOptions="Center" Margin="10,0,0,0" FontSize="Small"  FontFamily="Montserrat-Regular"/>
+						</HorizontalStackLayout>
+						<Label Grid.Column="1"
+						   Text="{Binding visaTotalText}"
+						   HorizontalOptions="End" VerticalOptions="Center" Margin="0,0,20,0" FontSize="Small" FontFamily="KeepCalm-Medium"/>
+					</Grid>
+				</Frame>
+				<Button Grid.Row="2" Opacity="0" Clicked="frame3_Clicked"/>
+			</Grid>
+		</Frame>
+		<Frame x:Name="frame4" Grid.Column="1" Padding="0" BackgroundColor="{x:StaticResource backColor}" BorderColor="{x:StaticResource backColor}">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height=".1*"/>
+					<RowDefinition Height=".4*"/>
+					<RowDefinition Height=".4*"/>
+				</Grid.RowDefinitions>
+
+
+				<Frame Grid.Row="0" Padding="0" BackgroundColor="{x:StaticResource backColor}" BorderColor="{x:StaticResource backColor}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Label Grid.Row="0" Grid.Column="0"
+					   Text="{Binding budgetsText}"
+						HorizontalOptions="Start" VerticalOptions="End" Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" FontAttributes="Bold"/>
+						<Label Grid.Row="0" Grid.Column="1"
+					   Text="{Binding manageText}"
+						HorizontalOptions="End" VerticalOptions="End" Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Regular" FontAttributes="None" TextColor="Gray"/>
+					</Grid>
+				</Frame>
+				<Frame Grid.Row="1" Padding="0" BackgroundColor="{x:StaticResource backColor}" BorderColor="{x:StaticResource backColor}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Frame x:Name="fourframe1" Grid.Column="0" Padding="0" Margin="10" CornerRadius="15"  BackgroundColor="{x:StaticResource cardColor}" BorderColor="{x:StaticResource cardColor}" >
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*"/>
+									<RowDefinition Height=".5*"/>
+									<RowDefinition Height=".5*"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+
+								<Image Grid.Row="0" Grid.Column="0"
+							   Source="icons8_chart_480px.png"
+							   HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,15,0,0" Opacity=".5"/>
+								<Label Grid.Row="1" Grid.Column="0"
+							   Text="{Binding travelText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Bold" VerticalOptions="End"/>
+								<Label Grid.Row="1" Grid.Column="1"
+							   Text="83%"
+							   Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Bold" HorizontalOptions="End" VerticalOptions="End"/>
+								<Label Grid.Row="2" Grid.Column="0"
+							   Text="{Binding leftText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" Opacity=".45"/>
+							</Grid>
+						</Frame>
+						<Button Grid.Column="0" Opacity="0" Clicked="fourframe1_Clicked"/>
+						<Frame x:Name="fourframe2" Grid.Column="1" Padding="0" Margin="10" CornerRadius="15"  BackgroundColor="{x:StaticResource cardColor}" BorderColor="{x:StaticResource cardColor}" >
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*"/>
+									<RowDefinition Height=".5*"/>
+									<RowDefinition Height=".5*"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+
+								<Image Grid.Row="0" Grid.Column="0"
+							   Source="icons8_chart_480px.png"
+							   HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,15,0,0" Opacity=".5"/>
+								<Label Grid.Row="1" Grid.Column="0"
+							   Text="{Binding groceriesText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Bold" VerticalOptions="End"/>
+								<Label Grid.Row="1" Grid.Column="1"
+							   Text="69%"
+							   Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Bold" HorizontalOptions="End" VerticalOptions="End"/>
+								<Label Grid.Row="2" Grid.Column="0"
+							   Text="{Binding leftText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" Opacity=".45"/>
+							</Grid>
+						</Frame>
+						<Button Grid.Column="1" Opacity="0" Clicked="fourframe2_Clicked"/>
+					</Grid>
+				</Frame>
+				<Frame Grid.Row="2" Padding="0" BackgroundColor="{x:StaticResource backColor}" BorderColor="{x:StaticResource backColor}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+
+						<Frame x:Name="fourframe3" Grid.Column="0" Padding="0" Margin="10" CornerRadius="15"  BackgroundColor="{x:StaticResource cardColor}" BorderColor="{x:StaticResource cardColor}" >
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*"/>
+									<RowDefinition Height=".5*"/>
+									<RowDefinition Height=".5*"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+
+								<Image Grid.Row="0" Grid.Column="0"
+							   Source="icons8_chart_480px.png"
+							   HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,15,0,0" Opacity=".5"/>
+								<Label Grid.Row="1" Grid.Column="0"
+							   Text="{Binding travelText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Bold" VerticalOptions="End"/>
+								<Label Grid.Row="1" Grid.Column="1"
+							   Text="83%"
+							   Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Bold" HorizontalOptions="End" VerticalOptions="End"/>
+								<Label Grid.Row="2" Grid.Column="0"
+							   Text="{Binding leftText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" Opacity=".45"/>
+							</Grid>
+						</Frame>
+						<Button Grid.Column="0" Opacity="0" Clicked="fourframe3_Clicked"/>
+						<Frame x:Name="fourframe4" Grid.Column="1" Padding="0" Margin="10" CornerRadius="15"  BackgroundColor="{x:StaticResource cardColor}" BorderColor="{x:StaticResource cardColor}" >
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*"/>
+									<RowDefinition Height=".5*"/>
+									<RowDefinition Height=".5*"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="*"/>
+								</Grid.ColumnDefinitions>
+
+								<Image Grid.Row="0" Grid.Column="0"
+							   Source="icons8_chart_480px.png"
+							   HeightRequest="50" HorizontalOptions="Start" VerticalOptions="Start" Margin="15,15,0,0" Opacity=".5"/>
+								<Label Grid.Row="1" Grid.Column="0"
+							   Text="{Binding groceriesText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Bold" VerticalOptions="End"/>
+								<Label Grid.Row="1" Grid.Column="1"
+							   Text="69%"
+							   Margin="0,0,15,0" FontSize="Small" FontFamily="Montserrat-Bold" HorizontalOptions="End" VerticalOptions="End"/>
+								<Label Grid.Row="2" Grid.Column="0"
+							   Text="{Binding leftText}"
+							   Margin="15,0,0,0" FontSize="Small" FontFamily="Montserrat-Regular" Opacity=".45"/>
+							</Grid>
+						</Frame>
+						<Button Grid.Column="1" Opacity="0" Clicked="fourframe4_Clicked"/>
+					</Grid>
+				</Frame>
+			</Grid>
+		</Frame>
+	</Grid>
+</ContentView>

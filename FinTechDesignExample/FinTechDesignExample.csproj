@@ -54,16 +54,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="MainPagePortrait.xaml.cs">
-	    <DependentUpon>MainPagePortrait.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="MainPagePortrait.xaml">
+	  <MauiXaml Update="Pages\MainPage\MainPage_ContentView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MainRotationHandler.xaml">
+	  <MauiXaml Update="Pages\MainPage\MainPage_Landscape.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\MainPage\MainPage_Portrait.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
