@@ -1,4 +1,5 @@
 ﻿
+using System.ComponentModel;
 using System.Windows.Input;
 
 namespace FinTechDesignExample.Pages.MainPage
@@ -23,6 +24,11 @@ namespace FinTechDesignExample.Pages.MainPage
 		public string groceriesText { get { if (lang.Equals(tr)) return "Yemek"; else return "Groceries"; } set { groceriesText = value; } }
 
 		private string leftValue = "828";
+
+	
+
 		public string leftText { get { if (lang.Equals(tr)) return leftValue + " TL kaldı"; else return "$ " + leftValue + " left"; } set { leftValue = value; } }
+
+	
 	}
 }

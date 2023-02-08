@@ -35,5 +35,13 @@ namespace FinTechDesignExample
 			await frame.ScaleTo(defaultScale, duration);
 		}
 
+		public static async void NavigateButtonClicked(Border border, float defaultOpacity, float targetOpacity, uint f_duration,ImageButton imageButton, float defaultScale, float targetScale, uint ib_duration)
+		{
+			await border.FadeTo(targetOpacity, f_duration);
+			await imageButton.ScaleTo(targetScale, ib_duration);
+			await imageButton.ScaleTo(defaultScale, ib_duration);
+			await border.FadeTo(defaultOpacity, f_duration*100);
+		}
+
 	}
 }

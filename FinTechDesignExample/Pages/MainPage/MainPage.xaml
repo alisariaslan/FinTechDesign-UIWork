@@ -2,13 +2,43 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinTechDesignExample.MainPage"
-			 xmlns:local="clr-namespace:FinTechDesignExample"
+			 xmlns:local="clr-namespace:FinTechDesignExample.Pages.MainPage"
 			 xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
 			 xmlns:controls="clr-namespace:FinTechDesignExample">
+	
 	<ContentPage.Behaviors>
 		<toolkit:StatusBarBehavior StatusBarColor="#F5F5F5" StatusBarStyle="DarkContent" />
 	</ContentPage.Behaviors>
 
-	<controls:MainPage_ContentView/>
-	
+	<ContentPage.BindingContext>
+		<local:MainPageViewModel/>
+	</ContentPage.BindingContext>
+
+	<Grid>
+		<Grid>
+			<controls:MainPage_ContentView x:Name="myContent"/>
+		</Grid>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="75"/>
+			</Grid.RowDefinitions>
+			
+			<Border x:Name="border" Grid.Row="1" BackgroundColor="Black" Margin="10" WidthRequest="200" Padding="15" Opacity=".5">
+				<Border.StrokeShape>
+					<RoundRectangle CornerRadius="30" />
+				</Border.StrokeShape>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"/>
+						<ColumnDefinition Width="*"/>
+					</Grid.ColumnDefinitions>
+
+					<ImageButton Grid.Column="0" Source="icons8_home_512px.png" Clicked="home_clicked"/>
+					<ImageButton Grid.Column="1" Source="icons8_info_500px.png" Clicked="info_clicked"/>
+				</Grid>
+			</Border>
+		</Grid>
+	</Grid>
+
 </ContentPage>
