@@ -1,5 +1,6 @@
 # FinTechDesignExample
-.NET MAUI - A project I started to improve myself on the XAML side.
+
+It was a design project I started to improve myself on the XAML side in .NET MAUI.
 
 The design i picked: https://ar.pinterest.com/pin/834995587184237046/
 
